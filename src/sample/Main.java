@@ -16,6 +16,11 @@ public class Main extends Application {
         primaryStage.show();
     }
 
+    private static void owo () {
+
+        //I'm ust testing your OWO skillz
+    }
+
 
     public static void main(String[] args) {
         launch(args);
