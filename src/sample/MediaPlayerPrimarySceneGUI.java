@@ -13,7 +13,12 @@ public class MediaPlayerPrimarySceneGUI extends Application {
     @Override
     public void start(Stage primarystage)
     {
-     primarystage.setTitle("A fucking awesome Media Player");
+        Parent root = FXMLLoader.load(getClass().getResource("MediaPlayerPrimaryScene.fxml"));
+        primarystage.setTitle("A fucking awesome Media Player");
+        primarystage.setScene(new Scene(root));
+        primarystage.show();
+        launch();
+
 
 
 
