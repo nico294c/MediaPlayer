@@ -6,4 +6,5 @@
 /dataSources.local.xml
 # Editor-based HTTP Client requests
 /httpRequests/
-/.xml
+/.idea/libraries/lib.xml
+/src/sample/db.properties
