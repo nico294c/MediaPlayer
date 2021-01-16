@@ -7,25 +7,25 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerMPLoadPlaylist">
    <children>
       <VBox prefHeight="400.0" prefWidth="300.0">
          <children>
             <HBox alignment="TOP_CENTER" prefHeight="42.0" prefWidth="300.0">
                <children>
-                  <Button mnemonicParsing="false" text="Load Selected Playlist">
+                  <Button mnemonicParsing="false" text="Load Selected Playlist" fx:id="loadSelectedPlaylistButton">
                      <HBox.margin>
                         <Insets right="90.0" top="10.0" />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" text="Cancel">
+                  <Button mnemonicParsing="false" text="Cancel" fx:id="loadPlaylistCancelButton">
                      <HBox.margin>
                         <Insets top="10.0" />
                      </HBox.margin>
                   </Button>
                </children>
             </HBox>
-            <ListView prefHeight="336.0" prefWidth="300.0" />
+            <ListView prefHeight="336.0" prefWidth="300.0" fx:id="loadPlaylistAvailablePlaylists"/>
          </children>
       </VBox>
    </children>

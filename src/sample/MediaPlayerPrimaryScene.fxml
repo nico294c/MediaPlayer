@@ -11,7 +11,7 @@
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerMPPrimaryStage">
    <children>
       <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: grey;">
          <children>
@@ -21,44 +21,44 @@
                   <ListView prefHeight="350.0" prefWidth="200.0" />
                </children>
             </HBox>
-            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+            <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: lightgrey;">
                <children>
-                  <Slider />
+                  <Slider fx:id="progressBarSlider"/>
                   <HBox prefHeight="50.0" prefWidth="500.0">
                      <children>
-                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="🔀">
+                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="🔀" fx:id="shuffleButton">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="⏮">
+                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="⏮" fx:id="skipBackButton">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="⏵">
+                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="⏵" fx:id="playButton">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="⏸">
+                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="⏸" fx:id="pauseButton">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="⏭">
+                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="⏭" fx:id="skipForwardButton">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="🔁">
+                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="🔁" fx:id="repeatButton">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Button>
                         <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="New Playlist">
+                              <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="New Playlist" fx:id="newPlaylistButton">
                                  <font>
                                     <Font name="Agency FB" size="18.0" />
                                  </font>
@@ -66,12 +66,12 @@
                                     <Insets />
                                  </opaqueInsets>
                               </Button>
-                              <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="Load Playlist">
+                              <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="Load Playlist" fx:id="loadPlaylistButton">
                                  <font>
                                     <Font name="Agency FB" size="18.0" />
                                  </font>
                               </Button>
-                              <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="Edit Playlist">
+                              <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="Edit Playlist" fx:id="editPlaylistButton">
                                  <font>
                                     <Font name="Agency FB" size="18.0" />
                                  </font>
@@ -102,7 +102,7 @@
                               <Insets left="10.0" />
                            </padding>
                         </Label>
-                        <Slider>
+                        <Slider fx:id="volumeBarSlider">
                            <HBox.margin>
                               <Insets />
                            </HBox.margin>
@@ -117,7 +117,7 @@
                         </Label>
                      </children>
                      <padding>
-                        <Insets top="-30.0" />
+                        <Insets left="15.0" top="-30.0" />
                      </padding>
                   </HBox>
                </children>
