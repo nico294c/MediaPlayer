@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerMPLoadPlaylist">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" style="-fx-background-color: grey;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerMPLoadPlaylist">
    <children>
       <VBox prefHeight="400.0" prefWidth="300.0">
          <children>
@@ -18,7 +18,7 @@
                         <Insets right="90.0" top="10.0" />
                      </HBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" text="Cancel" fx:id="loadPlaylistCancelButton">
+                  <Button mnemonicParsing="false" text="Cancel" fx:id="loadPlaylistCancelButton" onAction="#loadPlaylistCancelButtonClicked">
                      <HBox.margin>
                         <Insets top="10.0" />
                      </HBox.margin>
