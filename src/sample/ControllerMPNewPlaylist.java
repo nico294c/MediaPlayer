@@ -1,11 +1,17 @@
 package sample;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
-public class ControllerMPNewPlaylist {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class ControllerMPNewPlaylist implements Initializable {
 
     @FXML
     private Button loadAvailableSongsButton;
@@ -15,6 +21,11 @@ public class ControllerMPNewPlaylist {
 
     @FXML
     private Button cancelButton;
+
+    public void cancelButtonClicked(ActionEvent event){
+        Stage stage = (Stage) cancelButton.getScene().getWindow();
+        stage.close();
+    }
 
     @FXML
     private TextField playlistNameInput;
@@ -31,4 +42,8 @@ public class ControllerMPNewPlaylist {
     @FXML
     private Button removeSelectedButton;
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
 }

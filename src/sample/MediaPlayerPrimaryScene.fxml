@@ -11,7 +11,7 @@
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerMPPrimaryStage">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerMPPrimaryStage">
    <children>
       <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: grey;">
          <children>
@@ -23,42 +23,42 @@
             </HBox>
             <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: lightgrey;">
                <children>
-                  <Slider fx:id="progressBarSlider"/>
+                  <Slider fx:id="progressBarSlider" />
                   <HBox prefHeight="50.0" prefWidth="500.0">
                      <children>
-                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="🔀" fx:id="shuffleButton">
+                        <Button fx:id="shuffleButton" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="🔀">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="⏮" fx:id="skipBackButton">
+                        <Button fx:id="skipBackButton" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="⏮">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="⏵" fx:id="playButton">
+                        <Button fx:id="playButton" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="⏵">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="⏸" fx:id="pauseButton">
+                        <Button fx:id="pauseButton" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="⏸">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="⏭" fx:id="skipForwardButton">
+                        <Button fx:id="skipForwardButton" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="⏭">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <Button alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="🔁" fx:id="repeatButton">
+                        <Button fx:id="repeatButton" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="🔁">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Button>
                         <VBox alignment="CENTER_RIGHT" prefHeight="200.0" prefWidth="200.0">
                            <children>
-                              <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="New Playlist" fx:id="newPlaylistButton">
+                              <Button fx:id="newPlaylistButton" mnemonicParsing="false" onAction="#newPlaylistButtonClicked" prefHeight="50.0" prefWidth="120.0" text="New Playlist">
                                  <font>
                                     <Font name="Agency FB" size="18.0" />
                                  </font>
@@ -66,12 +66,12 @@
                                     <Insets />
                                  </opaqueInsets>
                               </Button>
-                              <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="Load Playlist" fx:id="loadPlaylistButton">
+                              <Button fx:id="loadPlaylistButton" onAction="#loadPlaylistButtonClicked" prefHeight="50.0" prefWidth="120.0" text="Load Playlist">
                                  <font>
                                     <Font name="Agency FB" size="18.0" />
                                  </font>
                               </Button>
-                              <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="120.0" text="Edit Playlist" fx:id="editPlaylistButton">
+                              <Button fx:id="editPlaylistButton" onAction="#editPlaylistButtonClicked" prefHeight="50.0" prefWidth="120.0" text="Edit Playlist">
                                  <font>
                                     <Font name="Agency FB" size="18.0" />
                                  </font>
@@ -81,7 +81,7 @@
                               <Insets left="60.0" />
                            </HBox.margin>
                            <padding>
-                              <Insets right="30.0" top="-10.0" />
+                              <Insets right="30.0" top="-15.0" />
                            </padding>
                         </VBox>
                      </children>
@@ -92,7 +92,7 @@
                         <Insets left="20.0" right="-20.0" top="20.0" />
                      </padding>
                   </HBox>
-                  <HBox prefHeight="100.0" prefWidth="200.0">
+                  <HBox prefHeight="12.0" prefWidth="500.0">
                      <children>
                         <Label text="🔈">
                            <font>
@@ -117,8 +117,11 @@
                         </Label>
                      </children>
                      <padding>
-                        <Insets left="15.0" top="-30.0" />
+                        <Insets left="15.0" />
                      </padding>
+                     <VBox.margin>
+                        <Insets top="-5.0" />
+                     </VBox.margin>
                   </HBox>
                </children>
             </VBox>

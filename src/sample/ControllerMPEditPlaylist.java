@@ -1,11 +1,18 @@
 package sample;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
-public class ControllerMPEditPlaylist {
+import javax.swing.*;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class ControllerMPEditPlaylist implements Initializable {
 
     @FXML
     private Button editLoadAvailableSongs;
@@ -15,6 +22,11 @@ public class ControllerMPEditPlaylist {
 
     @FXML
     private Button editCancelButton;
+
+    public void editCancelButtonClicked (ActionEvent event){
+        Stage stage = (Stage) editCancelButton.getScene().getWindow();
+        stage.close();
+    }
 
     @FXML
     private TextField editPlaylistNameInput;
@@ -31,4 +43,8 @@ public class ControllerMPEditPlaylist {
     @FXML
     private Button editRemoveSelected;
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
 }

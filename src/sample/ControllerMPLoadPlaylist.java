@@ -1,10 +1,16 @@
 package sample;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.stage.Stage;
 
-public class ControllerMPLoadPlaylist {
+import java.net.URL;
+import java.util.ResourceBundle;
+
+public class ControllerMPLoadPlaylist implements Initializable {
 
     @FXML
     private Button loadSelectedPlaylistButton;
@@ -12,7 +18,16 @@ public class ControllerMPLoadPlaylist {
     @FXML
     private Button loadPlaylistCancelButton;
 
+    public void loadPlaylistCancelButtonClicked (ActionEvent event) {
+        Stage stage = (Stage) loadPlaylistCancelButton.getScene().getWindow();
+        stage.close();
+    }
+
     @FXML
     private ListView<?> loadPlaylistAvailablePlaylists;
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+
+    }
 }
