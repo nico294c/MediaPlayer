@@ -17,7 +17,7 @@
          <children>
             <HBox prefHeight="450.0" prefWidth="200.0" style="-fx-background-color: grey;">
                <children>
-                  <MediaView fitHeight="450.0" fitWidth="300.0" />
+                  <MediaView fitHeight="450.0" fitWidth="300.0" fx:id="mediaPlayerMediaView"/>
                   <ListView prefHeight="350.0" prefWidth="200.0" />
                </children>
             </HBox>
@@ -36,12 +36,12 @@
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <Button fx:id="playButton" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="⏵">
+                        <Button fx:id="playButton" onAction= "#playButtonClicked" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="⏵">
                            <font>
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <Button fx:id="pauseButton" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="⏸">
+                        <Button fx:id="pauseButton" onAction="#pauseButtonClicked" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="⏸">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -81,7 +81,7 @@
                               <Insets left="60.0" />
                            </HBox.margin>
                            <padding>
-                              <Insets right="30.0" top="-15.0" />
+                              <Insets right="30.0" top="-20.0" />
                            </padding>
                         </VBox>
                      </children>
@@ -115,6 +115,14 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
+                        <Button mnemonicParsing="false" prefHeight="0.0" prefWidth="120.0" text="Open File" fx:id="openFileButton" onAction="#openFileButtonClicked">
+                           <HBox.margin>
+                              <Insets left="171.0" top="4.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Agency FB" size="18.0" />
+                           </font>
+                        </Button>
                      </children>
                      <padding>
                         <Insets left="15.0" />
