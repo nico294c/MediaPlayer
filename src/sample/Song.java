@@ -1,5 +1,7 @@
 package sample;
 
+import java.io.File;
+
 public class Song {
 
     private String songLocation;
@@ -39,15 +41,20 @@ public class Song {
         this.songID = songID;
     }
 
-    public Song(String songLocation, String songName, String songArtist){
-        setSongArtist(songArtist);
+    public Song(int songID, String songLocation){
+        String nameQuery = "Select fldName from tblSong where fldSongID = " + songID;
+        DB.selectSQL(nameQuery);
+        setSongName(DB.getData());
+
+        String artistQuery = "Select fldArtist from tblSong where fldSongID = " + songID;
+        DB.selectSQL(artistQuery);
+        setSongArtist(DB.getData());
+
+        String path = new File(songLocation).getAbsolutePath();
+        String insertLocation = "Update tblSong set fldLocation = '" + path + "'";
+        DB.insertSQL(insertLocation);
         setSongLocation(songLocation);
-        setSongName(songName);
-        String tempQuery = "Insert into tblSong(fldName,fldArtist,fldLocation) values('" + this.getSongName() + "','" + this.getSongArtist() + "','" + this.getSongLocation() + "')";
-        DB.insertSQL(tempQuery);
-        String tempRetrieveID = "Select fldSongID from tblSong where fldLocation ='" + this.getSongLocation() + "'";
-        DB.selectSQL(tempRetrieveID);
-        tempRetrieveID = DB.getData();
-        setSongID(Integer.parseInt(tempRetrieveID));
+
+        setSongID(songID);
     }
 }
