@@ -57,4 +57,8 @@ public class Song {
 
         setSongID(songID);
     }
+
+    public String toString(){
+        return "" + this.getSongArtist() + " - " + this.getSongName();
+    }
 }
