@@ -84,6 +84,8 @@ public class ControllerMPPrimaryStage extends MediaPlayerMain{
        //debug
         System.out.println("New Playlist button clicked");
 
+        DB.insertSQL("Insert into tblPlaylist(fldName) values('PlaceholderName')");
+
     }
 
     @FXML
@@ -134,7 +136,6 @@ public class ControllerMPPrimaryStage extends MediaPlayerMain{
             awesomeMediaPlayer = new MediaPlayer(songMedia);
             mediaPlayerMediaView.setMediaPlayer(awesomeMediaPlayer);
             awesomeMediaPlayer.play();
-            Song test = new Song(songPath,"SongName","SongArtist");
 
             //progress bar functionality
 
