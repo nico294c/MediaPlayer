@@ -2,6 +2,8 @@ package sample;
 
 import java.io.File;
 
+import static sample.DB.purgeSelection;
+
 public class Song {
 
     private String songLocation;
@@ -46,9 +48,7 @@ public class Song {
         DB.selectSQL(nameQuery);
         setSongName(DB.getData());
 
-        String artistQuery = "Select fldArtist from tblSong where fldSongID = " + songID;
-        DB.selectSQL(artistQuery);
-        setSongArtist(DB.getData());
+        purgeSelection();
 
         String path = new File(songLocation).getAbsolutePath();
         String insertLocation = "Update tblSong set fldLocation = '" + path + "'";
@@ -59,6 +59,6 @@ public class Song {
     }
 
     public String toString(){
-        return "" + this.getSongArtist() + " - " + this.getSongName();
+        return this.getSongName();
     }
 }

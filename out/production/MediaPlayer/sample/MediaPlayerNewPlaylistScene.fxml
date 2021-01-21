@@ -15,8 +15,8 @@
          <children>
             <HBox prefHeight="30.0" prefWidth="300.0">
                <children>
-                  <Button mnemonicParsing="false" text="Load Available Songs" fx:id="loadAvailableSongsButton"/>
-                  <Button mnemonicParsing="false" prefWidth="83.0" text="Save Playlist" fx:id="savePlaylistButton">
+                  <Button mnemonicParsing="false" text="Load Available Songs" fx:id="loadAvailableSongsButton" onAction="#loadAvailableSongsButtonClicked" />
+                  <Button mnemonicParsing="false" prefWidth="83.0" text="Save Playlist" fx:id="savePlaylistButton" onAction="#savePlaylistButtonClicked">
                      <HBox.margin>
                         <Insets />
                      </HBox.margin>
@@ -69,7 +69,7 @@
             </HBox>
             <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button mnemonicParsing="false" text="Add Selected" fx:id="addSelectedButton"/>
+                  <Button mnemonicParsing="false" text="Add Selected" fx:id="addSelectedButton" onAction="#addSelectedButtonClicked"/>
                   <Button mnemonicParsing="false" text="Remove Selected" fx:id="removeSelectedButton"/>
                </children>
                <VBox.margin>
