@@ -61,12 +61,4 @@ public class Song {
     public String toString(){
         return "" + this.getSongArtist() + " - " + this.getSongName();
     }
-
-    public void songsInit(){
-        Song animeThighs = new Song(1, "Songs/Anime Thighs (feat. Wonder).mp3");
-        Song running90s = new Song(2, "Songs/Initial D - Running in The 90s.mp3");
-        Song loveYourMove = new Song(3, "Songs/RASPUTIN - Vladimir Putin - Love The Way You Move (Funk Overload) @slocband.mp3");
-        Song slavKing = new Song(4, "Songs/SLAV_KING_-_Boris_vs._DJ_Blyatman.mp3");
-        Song blindingLights = new Song(5, "Songs/The Weeknd - Blinding Lights (Official Audio).mp3");
-    }
 }

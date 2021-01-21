@@ -182,9 +182,6 @@ public class ControllerMPPrimaryStage extends MediaPlayerMain{
             });
         }
     }
-
     @FXML
     private Slider volumeBarSlider;
-
-
 }
