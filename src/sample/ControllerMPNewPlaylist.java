@@ -19,10 +19,17 @@ public class ControllerMPNewPlaylist implements Initializable {
     @FXML
     private Button savePlaylistButton;
 
+    public void savePlaylistButtonClicked(ActionEvent event){
+        String playlistName = playlistNameInput.toString();
+        String insertQuery = "Insert into tblPlaylist(fldName) values('" + playlistName + "')";
+        DB.insertSQL(insertQuery);
+    }
+
     @FXML
     private Button cancelButton;
 
     public void cancelButtonClicked(ActionEvent event){
+        DB.deleteSQL("Delete from tblPlaylist where fldName = 'PlaceholderName'");
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
