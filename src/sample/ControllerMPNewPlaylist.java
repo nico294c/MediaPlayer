@@ -24,6 +24,7 @@ public class ControllerMPNewPlaylist implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+        //listener for song selection in available songs
         listAvailableSongs.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
@@ -31,37 +32,20 @@ public class ControllerMPNewPlaylist implements Initializable {
                         + oldValue + " to newValue = " + newValue);
             }
         });
-
     }
-
-
-    ObservableList<String> songList = FXCollections.<String>observableArrayList();
-    ListView<String> songListView = new ListView<>(songList);
 
     @FXML
     private Button loadAvailableSongsButton;
 
-
-
     public void loadAvailableSongsButtonClicked (ActionEvent event){
 
         Song animeThighs = new Song(1, "Songs/Anime Thighs (feat. Wonder).mp3");
-        System.out.println(animeThighs.toString());
-
         Song running90s = new Song(2, "Songs/Initial D - Running in The 90s.mp3");
-        System.out.println(running90s.toString());
-
         Song loveYourMove = new Song(3, "Songs/RASPUTIN - Vladimir Putin - Love The Way You Move (Funk Overload) @slocband.mp3");
-        System.out.println(loveYourMove.toString());
-
         Song slavKing = new Song(4, "Songs/SLAV_KING_-_Boris_vs._DJ_Blyatman.mp3");
-        System.out.println(slavKing.toString());
-
         Song blindingLights = new Song(5, "Songs/The Weeknd - Blinding Lights (Official Audio).mp3");
-        System.out.println(blindingLights.toString());
 
         listAvailableSongs.getItems().addAll(animeThighs.toString(), running90s.toString(), loveYourMove.toString(), slavKing.toString(), blindingLights.toString());
-
     }
 
     @FXML
@@ -69,7 +53,7 @@ public class ControllerMPNewPlaylist implements Initializable {
 
     public void savePlaylistButtonClicked(ActionEvent event){
         //Changes the placeholder name to a useable playlist name
-        String playlistName = playlistNameInput.toString();
+        String playlistName = playlistNameInput.getText();
         String insertQuery = "Insert into tblPlaylist(fldName) values('" + playlistName + "')";
         DB.insertSQL(insertQuery);
         //closes the stage
@@ -101,7 +85,6 @@ public class ControllerMPNewPlaylist implements Initializable {
 
     @FXML
     private ListView<String> listAvailableSongs;
-
 
     @FXML
     private ListView<String> listSelectedSongs;
