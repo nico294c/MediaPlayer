@@ -84,7 +84,7 @@ public class ControllerMPPrimaryStage extends MediaPlayerMain{
        //debug
         System.out.println("New Playlist button clicked");
 
-        DB.insertSQL("Insert into tblPlaylist(fldName) values('PlaceholderName')");
+        DB.updateSQL("Insert into tblPlaylist(fldName) values('PlaceholderName')");
 
     }
 
