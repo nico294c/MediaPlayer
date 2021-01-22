@@ -13,8 +13,6 @@ public class MediaPlayerMain extends Application {
     public void init() {
 
     }
-
-
     @Override
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("MediaPlayerPrimaryScene.fxml"));
@@ -25,7 +23,6 @@ public class MediaPlayerMain extends Application {
     }
     public static void main(String[] args) {
         launch(args);
-
     }
 
 }

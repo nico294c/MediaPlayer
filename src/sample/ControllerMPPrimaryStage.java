@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 import javafx.scene.control.Slider;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
@@ -184,4 +185,6 @@ public class ControllerMPPrimaryStage extends MediaPlayerMain{
     }
     @FXML
     private Slider volumeBarSlider;
+    @FXML
+    public ListView <String> loadedPlaylistView;
 }

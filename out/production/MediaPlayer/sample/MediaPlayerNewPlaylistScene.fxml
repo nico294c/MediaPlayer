@@ -70,7 +70,7 @@
             <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
                   <Button mnemonicParsing="false" text="Add Selected" fx:id="addSelectedButton" onAction="#addSelectedButtonClicked"/>
-                  <Button mnemonicParsing="false" text="Remove Selected" fx:id="removeSelectedButton"/>
+                  <Button mnemonicParsing="false" text="Remove Selected" fx:id="removeSelectedButton" onAction="#removeSelectedButtonClicked"/>
                </children>
                <VBox.margin>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="15.0" />

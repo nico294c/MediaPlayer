@@ -18,7 +18,7 @@
             <HBox prefHeight="450.0" prefWidth="200.0" style="-fx-background-color: grey;">
                <children>
                   <MediaView fitHeight="450.0" fitWidth="300.0" fx:id="mediaPlayerMediaView"/>
-                  <ListView prefHeight="350.0" prefWidth="200.0" />
+                  <ListView prefHeight="350.0" prefWidth="200.0" fx:id="loadedPlaylistView"/>
                </children>
             </HBox>
             <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: lightgrey;">
