@@ -4,6 +4,10 @@ import java.io.File;
 
 import static sample.DB.purgeSelection;
 
+/***
+ * Song object class, constructs song objects for further use in the media player
+ */
+
 public class Song {
 
     private String songLocation;

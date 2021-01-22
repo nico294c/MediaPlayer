@@ -37,6 +37,11 @@ public class ControllerMPNewPlaylist implements Initializable {
     @FXML
     private Button loadAvailableSongsButton;
 
+    /***
+     * Creates song objects and displays them in the listView
+     * @param event
+     */
+
     public void loadAvailableSongsButtonClicked (ActionEvent event){
 
         Song animeThighs = new Song(1, "Songs/Anime Thighs (feat. Wonder).mp3");
@@ -51,6 +56,10 @@ public class ControllerMPNewPlaylist implements Initializable {
     @FXML
     private Button savePlaylistButton;
 
+    /***
+     * renames the placeholder playlist to the input
+     * @param event
+     */
     public void savePlaylistButtonClicked(ActionEvent event){
         //Changes the placeholder name to a useable playlist name
         String playlistName = playlistNameInput.getText();
@@ -63,6 +72,13 @@ public class ControllerMPNewPlaylist implements Initializable {
 
     @FXML
     private Button cancelButton;
+
+    /***
+     * deletes the placeholder playlist
+     * deletes associated selected song data
+     * closes the scene
+     * @param event
+     */
 
     public void cancelButtonClicked(ActionEvent event){
 
@@ -92,6 +108,12 @@ public class ControllerMPNewPlaylist implements Initializable {
     @FXML
     private Button addSelectedButton;
 
+    /***
+     * Adds an associated song entry in the database
+     * Displays the selected song
+     * @param event
+     */
+
     public void addSelectedButtonClicked (ActionEvent event){
 
         ObservableList<String> selectedSonglist = FXCollections.<String>observableArrayList();
@@ -118,7 +140,10 @@ public class ControllerMPNewPlaylist implements Initializable {
     @FXML
     private Button removeSelectedButton;
 
-    //would remove an item from selected list and the associated database entry
+    /***
+     * would remove an item from selected list and the associated database entry
+     */
+
     public void removeSelectedButtonClicked (ActionEvent event){
 
         //delete SQL

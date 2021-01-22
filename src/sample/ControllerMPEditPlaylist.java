@@ -12,6 +12,9 @@ import javax.swing.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/***
+ * this would be a controller to edit a currently loaded (in the primary stage) playlist
+ */
 public class ControllerMPEditPlaylist implements Initializable {
 
     @FXML
