@@ -6,6 +6,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 
+/***
+ * Media Player
+ * @date 22.01.2021
+ * @authors Vanda Bovina, Daniela Petkova, Nicolai Barasinski
+ */
 
 public class MediaPlayerMain extends Application {
 

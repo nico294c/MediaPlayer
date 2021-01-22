@@ -13,7 +13,7 @@
          <children>
             <HBox alignment="TOP_CENTER" prefHeight="42.0" prefWidth="300.0">
                <children>
-                  <Button mnemonicParsing="false" text="Load Selected Playlist" fx:id="loadSelectedPlaylistButton">
+                  <Button mnemonicParsing="false" onAction="#loadSelectedPlaylistButtonClicked" text="Load Selected Playlist" fx:id="loadSelectedPlaylistButton">
                      <HBox.margin>
                         <Insets right="90.0" top="10.0" />
                      </HBox.margin>

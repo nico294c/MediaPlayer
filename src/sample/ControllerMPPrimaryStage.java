@@ -4,6 +4,8 @@ import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -23,14 +25,39 @@ import javafx.stage.Window;
 import javafx.util.Duration;
 
 
+import javax.swing.*;
 import java.awt.*;
 import java.io.File;
+
+import static sample.DB.pendingData;
+import static sample.DB.purgeSelection;
+
+/***
+ * Controller for the main stage of the player
+ */
 
 public class ControllerMPPrimaryStage extends MediaPlayerMain{
 
     private String songPath;
     private MediaPlayer awesomeMediaPlayer;
+    private Media songMedia;
 
+
+    /***
+     * Is supposed to carry over the selected playlist between "load playlist" and "primary" scenes
+     */
+    public void initializeSelectedPlaylist (){
+        if (pendingData!=false){
+            String tempPlaylistHolder = DB.getData();
+            System.out.println(tempPlaylistHolder);
+
+            ObservableList<String> loadedPlaylist = FXCollections.<String>observableArrayList();
+            loadedPlaylist.add(tempPlaylistHolder);
+            loadedPlaylistView.getItems();
+
+        }
+
+    }
     @FXML
     private MediaView mediaPlayerMediaView;
 
@@ -38,13 +65,27 @@ public class ControllerMPPrimaryStage extends MediaPlayerMain{
     private Slider progressBarSlider;
 
     @FXML
-    private Button shuffleButton;
+    private Button shuffleButton; //would be used to randomly rearrange the order of songs in the playlist. The idea was to create a 2d arraylist for the songs and randomly pick indexes.
 
     @FXML
     private Button skipBackButton;
 
+    /***
+     * Skips to the start of the song
+     * @param event
+     */
+
+    public void skipBackButtonClicked (ActionEvent event){
+        awesomeMediaPlayer.seek(javafx.util.Duration.seconds(0));
+    }
+
     @FXML
     private Button playButton;
+
+    /***
+     * plays the media
+     * @param event
+     */
 
     public void playButtonClicked(ActionEvent event) {
         awesomeMediaPlayer.play();
@@ -53,6 +94,11 @@ public class ControllerMPPrimaryStage extends MediaPlayerMain{
     @FXML
     private Button pauseButton;
 
+    /***
+     * pauses the media
+     * @param event
+     */
+
     public void pauseButtonClicked (ActionEvent event){
         awesomeMediaPlayer.pause();
     }
@@ -60,9 +106,25 @@ public class ControllerMPPrimaryStage extends MediaPlayerMain{
     @FXML
     private Button skipForwardButton;
 
+    /***
+     * Skips to the end of the song
+     * @param event
+     */
+
+    public void skipForwardButtonClicked (ActionEvent event){
+
+    awesomeMediaPlayer.seek(songMedia.getDuration());
+
+    }
+
     @FXML
     private Button repeatButton;
 
+
+    /***
+     * is supposed to loop the media when toggled
+     * @param event
+     */
     //to do later
     public void repeatButtonClicked (ActionEvent event){
         awesomeMediaPlayer.getOnRepeat();
@@ -72,6 +134,12 @@ public class ControllerMPPrimaryStage extends MediaPlayerMain{
 
     @FXML
     private Button newPlaylistButton;
+
+    /***
+     * opens the "new playlist" scene and creates a placeholder playlist entry in the DB
+     * @param event
+     * @throws Exception
+     */
 
     @FXML
     public void newPlaylistButtonClicked(ActionEvent event) throws Exception{
@@ -92,6 +160,11 @@ public class ControllerMPPrimaryStage extends MediaPlayerMain{
     @FXML
     private Button loadPlaylistButton;
 
+    /***
+     * opens the "Load playlist" scene
+     * @param event
+     * @throws Exception
+     */
     public void loadPlaylistButtonClicked(ActionEvent event) throws Exception{
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MediaPlayerLoadPlaylistScene.fxml"));
@@ -108,6 +181,12 @@ public class ControllerMPPrimaryStage extends MediaPlayerMain{
     @FXML
     private Button editPlaylistButton;
 
+    /***
+     * Opens the "Edit playlist" scene
+     * @param event
+     * @throws Exception
+     */
+
     public void editPlaylistButtonClicked(ActionEvent event) throws Exception{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MediaPlayerEditPlaylist.fxml"));
         Parent rootEditPlaylist = (Parent) fxmlLoader.load();
@@ -123,6 +202,11 @@ public class ControllerMPPrimaryStage extends MediaPlayerMain{
     @FXML
     private Button openFileButton;
 
+    /***
+     * Opens a single media through a file breowser
+     * @param event
+     */
+
     public void openFileButtonClicked (ActionEvent event){
 
         FileChooser songFileChooser = new FileChooser();
@@ -133,7 +217,7 @@ public class ControllerMPPrimaryStage extends MediaPlayerMain{
         if (songFile != null){
 
             //media creation
-            Media songMedia = new Media(songPath);
+            songMedia = new Media(songPath);
             awesomeMediaPlayer = new MediaPlayer(songMedia);
             mediaPlayerMediaView.setMediaPlayer(awesomeMediaPlayer);
             awesomeMediaPlayer.play();

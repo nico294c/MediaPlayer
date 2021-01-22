@@ -31,7 +31,7 @@
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <Button fx:id="skipBackButton" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="⏮">
+                        <Button fx:id="skipBackButton" onAction="#skipBackButtonClicked" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="⏮">
                            <font>
                               <Font size="18.0" />
                            </font>
@@ -46,7 +46,7 @@
                               <Font size="18.0" />
                            </font>
                         </Button>
-                        <Button fx:id="skipForwardButton" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="⏭">
+                        <Button fx:id="skipForwardButton" onAction="#skipForwardButtonClicked" alignment="CENTER_RIGHT" mnemonicParsing="false" prefHeight="40.0" prefWidth="55.0" text="⏭">
                            <font>
                               <Font size="18.0" />
                            </font>

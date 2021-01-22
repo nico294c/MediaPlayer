@@ -16,7 +16,21 @@ import java.util.ResourceBundle;
 
 import static sample.DB.purgeSelection;
 
-public class ControllerMPLoadPlaylist implements Initializable {
+/***
+ * This scene loads and displays available saved playlists
+ * the selected playlist should be loaded into the corresponding listview in the primary scene.
+ * this class implements intitializable interface, in order to load the exisitng playlists from the getgo.
+ * Primary scene controller is extended to inherit a method that would prompt loading and display of the playlist selected here.
+ */
+
+public class ControllerMPLoadPlaylist extends ControllerMPPrimaryStage implements Initializable {
+
+    /***
+     * loads created playlists
+     * creates a listener for the selected item
+     * @param location
+     * @param resources
+     */
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -39,18 +53,26 @@ public class ControllerMPLoadPlaylist implements Initializable {
     @FXML
     private Button loadSelectedPlaylistButton;
 
+    /***
+     * Selects the associated database entry, to hold the information for the primary scene loader
+     * Closes the scene
+     * @param event
+     */
     public void loadSelectedPlaylistButtonClicked (ActionEvent event){
-
-    }
-    //send the selected playlist to the primary stage
-    @FXML
-    private void sendloadPlaylistData (MouseEvent event){
-
+    DB.selectSQL("Select fldName from tblPlaylist where fldName = '"+loadPlaylistAvailablePlaylists.getSelectionModel().getSelectedItem()+"'");
+    initializeSelectedPlaylist();
+    //close stage
+        Stage stage = (Stage) loadPlaylistCancelButton.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
     private Button loadPlaylistCancelButton;
 
+    /***
+     * closes the scene without any changes
+     * @param event
+     */
     public void loadPlaylistCancelButtonClicked (ActionEvent event) {
         Stage stage = (Stage) loadPlaylistCancelButton.getScene().getWindow();
         stage.close();
